@@ -1,12 +1,13 @@
 #include <LPC11xx.h>
+#include <stdint.h>
 
 // Define GPIO registers
-#define GPIO0DIR (*((volatile unsigned long *)0x50008000))
-#define GPIO0DATA (*((volatile unsigned long *)0x50003FFC))
-#define GPIO1DIR (*((volatile unsigned long *)0x50010000)) // Port 1 for Red LED
-#define GPIO1DATA (*((volatile unsigned long *)0x50013FFC))
-#define GPIO2DIR (*((volatile unsigned long *)0x50028000))
-#define GPIO2DATA (*((volatile unsigned long *)0x50023FFC))
+#define GPIO0DIR (*((volatile uint32_t *)0x50008000))  // Direction register for Port 0
+#define GPIO0DATA (*((volatile uint32_t *)0x50003FFC)) // Data register for Port 0
+#define GPIO1DIR (*((volatile uint32_t *)0x50010000))  // Direction register for Port 1 (Red LED)
+#define GPIO1DATA (*((volatile uint32_t *)0x50013FFC)) // Data register for Port 1
+#define GPIO2DIR (*((volatile uint32_t *)0x50028000))  // Direction register for Port 2
+#define GPIO2DATA (*((volatile uint32_t *)0x50023FFC)) // Data register for Port 2
 
 int seven_seg_encoder[] = {
     0xC0, // 0
