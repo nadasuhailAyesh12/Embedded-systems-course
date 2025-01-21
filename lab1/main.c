@@ -1,9 +1,10 @@
 #include <LPC11xx.h>
+#include <stdint.h>
 
-#define GPIO_PORT0_DIR (*((volatile unsigned long *)0x50008000))  // Direction register for Port 0
-#define GPIO_PORT0_DATA (*((volatile unsigned long *)0x50003FFC)) // Data register for Port 0
-#define GPIO_PORT2_DIR (*((volatile unsigned long *)0x50028000))  // Direction register for Port 2
-#define GPIO_PORT2_DATA (*((volatile unsigned long *)0x50023FFC)) // Data register for Port 2
+#define GPIO_PORT0_DIR (*((volatile uint32_t *)0x50008000))  // Direction register for Port 0
+#define GPIO_PORT0_DATA (*((volatile uint32_t *)0x50003FFC)) // Data register for Port 0
+#define GPIO_PORT2_DIR (*((volatile uint32_t *)0x50028000))   // Direction register for Port 2
+#define GPIO_PORT2_DATA (*((volatile uint32_t *)0x50023FFC)) // Data register for Port 2
 
 int main() {
     // Setup phase
